@@ -2,137 +2,226 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
-    background-color: #0b0b0e;
-    color: #ffffff;
+    background-color: #0b0c10;
+    color: #f1f1f1;
     padding-bottom: 60px;
+    background-image: radial-gradient(circle at top right, rgba(112, 0, 255, 0.08), transparent 40%);
 }
 
 header {
     text-align: center;
-    padding: 50px 20px 20px 20px;
+    padding: 60px 20px 30px;
 }
 
 .logo {
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.logo span { color: #ff4757; }
-.tagline { color: #a4b0be; margin-top: 5px; font-size: 1rem; }
-
-/* Filter Section Headings */
-.filter-section {
-    text-align: center;
-    margin: 20px auto;
-    max-width: 800px;
+.logo span {
+    color: #fff;
+    -webkit-text-fill-color: initial;
 }
 
-.filter-section h3 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: #57606f;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+.subtitle {
+    color: #8a8f98;
+    margin-top: 10px;
+    font-size: 1.1rem;
 }
 
-.filter-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding: 0 20px;
-}
-
-.filter-btn, .theme-btn {
-    background-color: #16161a;
-    color: #a4b0be;
-    border: 1px solid #23232a;
-    padding: 8px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.filter-btn:hover, .filter-btn.active, .theme-btn:hover, .theme-btn.active {
-    background-color: #ff4757;
-    color: white;
-    border-color: #ff4757;
-    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
-}
-
-/* Gallery Grid */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+/* Glassmorphism Filters Container */
+.filters-container {
     max-width: 1200px;
-    margin: 40px auto 0 auto;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-section h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #646cff;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.04);
+    color: #a0a5b5;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #646cff, #4facfe);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
+}
+
+/* Premium Card Grid */
+.wallpaper-grid {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .wallpaper-card {
-    background-color: #16161a;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
     overflow: hidden;
-    transition: transform 0.3s ease;
-    border: 1px solid #23232a;
+    transition: all 0.3s ease;
 }
 
-.wallpaper-card:hover { transform: translateY(-5px); }
-.image-wrapper { position: relative; height: 380px; background-color: #1e1e24; }
-.image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.wallpaper-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(100, 108, 255, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
 
-/* Badges Styling */
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #16171e;
+    overflow: hidden;
+}
+
+/* Handling phone wallpapers aspects in grid natively */
+.wallpaper-card[data-device="phone"] .image-container {
+    aspect-ratio: 3/4;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.wallpaper-card:hover .image-container img {
+    transform: scale(1.05);
+}
+
+/* Badges styling */
 .badge {
     position: absolute;
     top: 15px;
     left: 15px;
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: 50px;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
 }
-.badge.free { background-color: #2ed573; color: white; }
-.badge.paid { background-color: #ffa502; color: white; }
 
-/* New Resolution Badge (Bottom Right of Image) */
-.res-badge {
+.badge.premium {
+    background: linear-gradient(135deg, #ff9f43, #ff5252);
+    color: #fff;
+}
+
+.badge.free {
+    background: linear-gradient(135deg, #1dd1a1, #10ac84);
+    color: #fff;
+}
+
+.resolution-tag {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
-    color: #ffffff;
     padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: #d1d5db;
 }
 
-.card-info { padding: 20px; text-align: center; }
-.card-info h3 { font-size: 1.05rem; margin-bottom: 15px; font-weight: 600; }
+.card-info {
+    padding: 20px;
+}
 
+.card-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #f3f4f6;
+}
+
+/* Buttons Design */
 .btn {
-    display: inline-block;
+    display: block;
     width: 100%;
+    text-align: center;
     padding: 12px;
-    border-radius: 10px;
-    text-decoration: none;
+    border-radius: 14px;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.2s ease;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
 }
-.buy-btn { background-color: #ffa502; color: white; }
-.buy-btn:hover { background-color: #e69500; }
-.download-btn { background-color: #2ed573; color: white; }
-.download-btn:hover { background-color: #26af5f; }
 
-footer { text-align: center; margin-top: 80px; color: #57606f; font-size: 0.85rem; }
+.buy-btn {
+    background: #fff;
+    color: #0b0c10;
+}
+
+.buy-btn:hover {
+    background: #e5e7eb;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.free-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.free-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .filters-container {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    .logo { font-size: 2.3rem; }
+}
