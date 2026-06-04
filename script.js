@@ -1,227 +1,34 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        // Sirf us section ke buttons se active class hatao jiska button daba hai
+        const type = button.dataset.type;
+        document.querySelectorAll(`.filter-btn[data-type="${type}"]`).forEach(b => b.classList.remove('active'));
+        
+        // Current button ko active karo
+        button.classList.add('active');
 
-body {
-    background-color: #0b0c10;
-    color: #f1f1f1;
-    padding-bottom: 60px;
-    background-image: radial-gradient(circle at top right, rgba(112, 0, 255, 0.08), transparent 40%);
-}
+        // Smart Filtering apply karo
+        applyMultiFilters();
+    });
+});
 
-header {
-    text-align: center;
-    padding: 60px 20px 30px;
-}
+function applyMultiFilters() {
+    // Teeno active filter values ko read karo
+    const activeDevice = document.querySelector('.filter-btn[data-type="device"].active').dataset.value;
+    const activePrice = document.querySelector('.filter-btn[data-type="price"].active').dataset.value;
+    const activeTheme = document.querySelector('.filter-btn[data-type="theme"].active').dataset.value;
 
-.logo {
-    font-size: 3rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #00f2fe, #4facfe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    document.querySelectorAll('.wallpaper-card').forEach(card => {
+        // Condition check karein
+        const matchDevice = activeDevice === 'all' || card.dataset.device === activeDevice;
+        const matchPrice = activePrice === 'all' || card.dataset.price === activePrice;
+        const matchTheme = activeTheme === 'all' || card.dataset.theme === activeTheme;
 
-.logo span {
-    color: #fff;
-    -webkit-text-fill-color: initial;
-}
-
-.subtitle {
-    color: #8a8f98;
-    margin-top: 10px;
-    font-size: 1.1rem;
-}
-
-/* Glassmorphism Filters Container */
-.filters-container {
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.filter-section h4 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: #646cff;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-.filter-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.filter-btn {
-    background: rgba(255, 255, 255, 0.04);
-    color: #a0a5b5;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.filter-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-.filter-btn.active {
-    background: linear-gradient(135deg, #646cff, #4facfe);
-    color: #fff;
-    border-color: transparent;
-    box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
-}
-
-/* Premium Card Grid */
-.wallpaper-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.wallpaper-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 24px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.wallpaper-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(100, 108, 255, 0.3);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: #16171e;
-    overflow: hidden;
-}
-
-/* Handling phone wallpapers aspects in grid natively */
-.wallpaper-card[data-device="phone"] .image-container {
-    aspect-ratio: 3/4;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.wallpaper-card:hover .image-container img {
-    transform: scale(1.05);
-}
-
-/* Badges styling */
-.badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    z-index: 2;
-}
-
-.badge.premium {
-    background: linear-gradient(135deg, #ff9f43, #ff5252);
-    color: #fff;
-}
-
-.badge.free {
-    background: linear-gradient(135deg, #1dd1a1, #10ac84);
-    color: #fff;
-}
-
-.resolution-tag {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    color: #d1d5db;
-}
-
-.card-info {
-    padding: 20px;
-}
-
-.card-info h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #f3f4f6;
-}
-
-/* Buttons Design */
-.btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    border-radius: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-}
-
-.buy-btn {
-    background: #fff;
-    color: #0b0c10;
-}
-
-.buy-btn:hover {
-    background: #e5e7eb;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
-}
-
-.free-btn {
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.free-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-    .filters-container {
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-    }
-    .logo { font-size: 2.3rem; }
+        // Agar card teeno conditions par sahi utarta hai toh dikhao, varna chhupao
+        if (matchDevice && matchPrice && matchTheme) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
