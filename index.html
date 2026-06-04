@@ -3,155 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallpaper Verse - 4K, Anime & Live Wallpapers</title>
+    <title>Wallpaper Verse | Premium Aesthetic Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="logo">Wallpaper <span>Verse</span></div>
-        <p class="tagline">Premium 2K, 4K & Live Wallpapers for Every Screen</p>
+        <div class="logo">WALLPAPER<span>VERSE</span></div>
+        <p class="subtitle">Elevate your screens with ultra-premium 4K setups</p>
     </header>
 
-    <!-- FILTER ROW 1: Devices & Formats -->
-    <div class="filter-section">
-        <h3>Filter by Device</h3>
-        <div class="filter-container" id="device-filters">
-            <button class="filter-btn active" data-device="all">All Devices</button>
-            <button class="filter-btn" data-device="pc">PC / Laptop</button>
-            <button class="filter-btn" data-device="phone">Phone</button>
-            <button class="filter-btn" data-device="tablet">Tablet</button>
-            <button class="filter-btn" data-device="live">Live Wallpapers</button>
-        </div>
-    </div>
-
-    <!-- FILTER ROW 2: Themes & Niches -->
-    <div class="filter-section">
-        <h3>Filter by Theme</h3>
-        <div class="filter-container" id="theme-filters">
-            <button class="theme-btn active" data-theme="all">All Themes</button>
-            <button class="theme-btn" data-theme="anime">Anime</button>
-            <button class="theme-btn" data-theme="cars">Cars</button>
-            <button class="theme-btn" data-theme="cyberpunk">Cyberpunk / Futuristic</button>
-            <button class="theme-btn" data-theme="nature">Nature</button>
-            <button class="theme-btn" data-theme="amoled">Amoled / Dark</button>
-            <button class="theme-btn" data-theme="cinematic">Cinematic / Movies</button>
-        </div>
-    </div>
-
-    <!-- GALLERY GRID -->
-    <main class="gallery-container">
-        
-        <!-- 1. PC - Anime - Paid (4K) -->
-        <div class="wallpaper-card" data-device="pc" data-theme="anime">
-            <div class="image-wrapper">
-                <span class="badge paid">Premium - $2.49</span>
-                <span class="res-badge">4K Ultra HD</span>
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500" alt="Anime 4K Wallpaper">
+    <main>
+        <div class="filters-container">
+            <div class="filter-section">
+                <h4>Device</h4>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-type="device" data-value="all">All Devices</button>
+                    <button class="filter-btn" data-type="device" data-value="pc">PC / Laptop</button>
+                    <button class="filter-btn" data-type="device" data-value="phone">Phone</button>
+                </div>
             </div>
-            <div class="card-info">
-                <h3>Neon Samurai Dusk</h3>
-                <a href="YOUR_GUMROAD_LINK" target="_blank" class="btn buy-btn">Buy 4K Wallpaper</a>
+
+            <div class="filter-section">
+                <h4>Access</h4>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-type="price" data-value="all">All Status</button>
+                    <button class="filter-btn" data-type="price" data-value="free">Free</button>
+                    <button class="filter-btn" data-type="price" data-value="premium">Premium 👑</button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Theme</h4>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-type="theme" data-value="all">All Themes</button>
+                    <button class="filter-btn" data-type="theme" data-value="anime">Anime</button>
+                    <button class="filter-btn" data-type="theme" data-value="cars">Supercars</button>
+                    <button class="filter-btn" data-type="theme" data-value="abstract">Abstract</button>
+                </div>
             </div>
         </div>
 
-        <!-- 2. Phone - Anime - Free (Amoled) -->
-        <div class="wallpaper-card" data-device="phone" data-theme="anime">
-            <div class="image-wrapper">
-                <span class="badge free">Free</span>
-                <span class="res-badge">AMOLED 2K</span>
-                <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500" alt="Anime Phone Wallpaper">
+        <div class="wallpaper-grid">
+            <div class="wallpaper-card" data-device="pc" data-theme="anime" data-price="premium">
+                <div class="image-container">
+                    <span class="badge premium">Premium</span>
+                    <img src="https://picsum.photos/id/1025/600/400" alt="Anime Setup">
+                    <div class="resolution-tag">4K Ultra HD</div>
+                </div>
+                <div class="card-info">
+                    <h3>Neon Cyber Anime Vibe</h3>
+                    <a href="#" target="_blank" class="btn buy-btn">Get Now — $2.49</a>
+                </div>
             </div>
-            <div class="card-info">
-                <h3>Minimal Anime Boy</h3>
-                <a href="YOUR_HIGH_RES_LINK" download class="btn download-btn">Download Free</a>
+
+            <div class="wallpaper-card" data-device="phone" data-theme="anime" data-price="free">
+                <div class="image-container">
+                    <span class="badge free">Free</span>
+                    <img src="https://picsum.photos/id/1062/400/600" alt="Anime Portrait">
+                    <div class="resolution-tag">2K HD</div>
+                </div>
+                <div class="card-info">
+                    <h3>Minimalist Anime Boy</h3>
+                    <a href="#" class="btn free-btn">Download Free</a>
+                </div>
+            </div>
+
+            <div class="wallpaper-card" data-device="pc" data-theme="cars" data-price="premium">
+                <div class="image-container">
+                    <span class="badge premium">Premium</span>
+                    <img src="https://picsum.photos/id/111/600/400" alt="Supercar">
+                    <div class="resolution-tag">4K Cinema</div>
+                </div>
+                <div class="card-info">
+                    <h3>Hypercar City Cruise</h3>
+                    <a href="#" target="_blank" class="btn buy-btn">Get Now — $1.99</a>
+                </div>
+            </div>
+
+            <div class="wallpaper-card" data-device="phone" data-theme="abstract" data-price="free">
+                <div class="image-container">
+                    <span class="badge free">Free</span>
+                    <img src="https://picsum.photos/id/1043/400/600" alt="Abstract Dynamic">
+                    <div class="resolution-tag">4K Mobile</div>
+                </div>
+                <div class="card-info">
+                    <h3>Abstract Fluid Geometry</h3>
+                    <a href="#" class="btn free-btn">Download Free</a>
+                </div>
             </div>
         </div>
-
-        <!-- 3. PC - Cars - Paid (4K) -->
-        <div class="wallpaper-card" data-device="pc" data-theme="cars">
-            <div class="image-wrapper">
-                <span class="badge paid">Premium - $1.99</span>
-                <span class="res-badge">4K Ultra HD</span>
-                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=500" alt="Cyberpunk Car Wallpaper">
-            </div>
-            <div class="card-info">
-                <h3>Cyberpunk Supercar</h3>
-                <a href="YOUR_GUMROAD_LINK" target="_blank" class="btn buy-btn">Buy 4K Wallpaper</a>
-            </div>
-        </div>
-
-        <!-- 4. Phone - Dark/Amoled - Free -->
-        <div class="wallpaper-card" data-device="phone" data-theme="amoled">
-            <div class="image-wrapper">
-                <span class="badge free">Free</span>
-                <span class="res-badge">2K HD</span>
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=500" alt="Dark Amoled Wallpaper">
-            </div>
-            <div class="card-info">
-                <h3>Abstract Dark Geometry</h3>
-                <a href="YOUR_HIGH_RES_LINK" download class="btn download-btn">Download Free</a>
-            </div>
-        </div>
-
-        <!-- 5. Live Wallpaper - Futuristic - Paid -->
-        <div class="wallpaper-card" data-device="live" data-theme="cyberpunk">
-            <div class="image-wrapper">
-                <span class="badge paid">Premium - $2.99</span>
-                <span class="res-badge">Live MP4 / 4K</span>
-                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=500" alt="Futuristic Live Wallpaper Preview">
-            </div>
-            <div class="card-info">
-                <h3>Neon City Rain (Animated)</h3>
-                <a href="YOUR_GUMROAD_LINK" target="_blank" class="btn buy-btn">Buy Live Wallpaper</a>
-            </div>
-        </div>
-
-        <!-- 6. Live Wallpaper - Nature - Free -->
-        <div class="wallpaper-card" data-device="live" data-theme="nature">
-            <div class="image-wrapper">
-                <span class="badge free">Free</span>
-                <span class="res-badge">Live MP4</span>
-                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500" alt="Nature Live Wallpaper">
-            </div>
-            <div class="card-info">
-                <h3>Deep Forest Waterfall</h3>
-                <a href="YOUR_HIGH_RES_LINK" download class="btn download-btn">Download Free</a>
-            </div>
-        </div>
-
-        <!-- 7. PC/Laptop - Cinematic/Movies - Paid -->
-        <div class="wallpaper-card" data-device="pc" data-theme="cinematic">
-            <div class="image-wrapper">
-                <span class="badge paid">Premium - $1.99</span>
-                <span class="res-badge">4K Cinema</span>
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500" alt="Cinematic Wallpaper">
-            </div>
-            <div class="card-info">
-                <h3>Interstellar Cosmic Horizon</h3>
-                <a href="YOUR_GUMROAD_LINK" target="_blank" class="btn buy-btn">Buy 4K Wallpaper</a>
-            </div>
-        </div>
-
-        <!-- 8. Tablet - Nature/Lifestyle - Free -->
-        <div class="wallpaper-card" data-device="tablet" data-theme="nature">
-            <div class="image-wrapper">
-                <span class="badge free">Free</span>
-                <span class="res-badge">2K Crystal</span>
-                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500" alt="Nature Tablet Wallpaper">
-            </div>
-            <div class="card-info">
-                <h3>Aesthetic Mountain Fog</h3>
-                <a href="YOUR_HIGH_RES_LINK" download class="btn download-btn">Download Free</a>
-            </div>
-        </div>
-
     </main>
-
-    <footer>
-        <p>&copy; 2026 Wallpaper Verse. All rights reserved.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
