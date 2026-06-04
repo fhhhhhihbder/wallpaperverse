@@ -3,113 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallpaper Verse | Premium Aesthetic Store</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar">
-    <div class="nav-logo">WallpaperVerse</div>
+    <title>WallpaperVerse - Premium Wallpapers</title>
 
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Categories</a>
-        <a href="#">Premium</a>
-        <a href="#">Trending</a>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="menu-btn">
+        ☰
     </div>
 
-    <div class="nav-buttons">
+    <div class="logo">
+        Wallpaper<span>Verse</span>
+    </div>
+
+    <div class="nav-actions">
         <button class="login-btn">Login</button>
         <button class="signup-btn">Sign Up</button>
     </div>
+
 </nav>
-    <header>
-        <div class="logo">WALLPAPER<span>VERSE</span></div>
-        <p class="subtitle">Elevate your screens with ultra-premium 4K setups</p>
-    </header>
 
-    <main>
-        <div class="filters-container">
-            <div class="filter-section">
-                <h4>Device</h4>
-                <div class="filter-group">
-                    <button class="filter-btn active" data-type="device" data-value="all">All Devices</button>
-                    <button class="filter-btn" data-type="device" data-value="pc">PC / Laptop</button>
-                    <button class="filter-btn" data-type="device" data-value="phone">Phone</button>
-                </div>
-            </div>
+<!-- SIDEBAR -->
 
-            <div class="filter-section">
-                <h4>Access</h4>
-                <div class="filter-group">
-                    <button class="filter-btn active" data-type="price" data-value="all">All Status</button>
-                    <button class="filter-btn" data-type="price" data-value="free">Free</button>
-                    <button class="filter-btn" data-type="price" data-value="premium">Premium 👑</button>
-                </div>
-            </div>
+<aside class="sidebar">
 
-            <div class="filter-section">
-                <h4>Theme</h4>
-                <div class="filter-group">
-                    <button class="filter-btn active" data-type="theme" data-value="all">All Themes</button>
-                    <button class="filter-btn" data-type="theme" data-value="anime">Anime</button>
-                    <button class="filter-btn" data-type="theme" data-value="cars">Supercars</button>
-                    <button class="filter-btn" data-type="theme" data-value="abstract">Abstract</button>
-                </div>
-            </div>
+    <h3>Categories</h3>
+
+    <ul>
+
+        <li>Anime</li>
+        <li>Nature</li>
+        <li>Aesthetic</li>
+        <li>Cyberpunk</li>
+        <li>Gaming</li>
+        <li>Cars</li>
+        <li>Movies</li>
+        <li>Fantasy</li>
+        <li>AMOLED</li>
+        <li>Lifestyle</li>
+        <li>Live Wallpapers</li>
+
+    </ul>
+
+</aside>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Discover Stunning Wallpapers
+    </h1>
+
+    <p>
+        Anime • Gaming • Nature • Cyberpunk • 4K • AMOLED
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Search wallpapers..."
+        >
+
+    </div>
+
+</section>
+
+<!-- DEVICE FILTER -->
+
+<section class="device-filter">
+
+    <button>All</button>
+    <button>Phone</button>
+    <button>PC</button>
+    <button>Laptop</button>
+    <button>Tablet</button>
+
+</section>
+
+<!-- TRENDING -->
+
+<section class="section">
+
+    <h2>🔥 Trending Wallpapers</h2>
+
+    <div class="wallpaper-grid">
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?1">
+
+            <h3>Makima Red Aura</h3>
+
         </div>
 
-        <div class="wallpaper-grid">
-            <div class="wallpaper-card" data-device="pc" data-theme="anime" data-price="premium">
-                <div class="image-container">
-                    <span class="badge premium">Premium</span>
-                    <img src="https://picsum.photos/id/1025/600/400" alt="Anime Setup">
-                    <div class="resolution-tag">4K Ultra HD</div>
-                </div>
-                <div class="card-info">
-                    <h3>Neon Cyber Anime Vibe</h3>
-                    <a href="#" target="_blank" class="btn buy-btn">Get Now — $2.49</a>
-                </div>
-            </div>
+        <div class="wallpaper-card">
 
-            <div class="wallpaper-card" data-device="phone" data-theme="anime" data-price="free">
-                <div class="image-container">
-                    <span class="badge free">Free</span>
-                    <img src="https://picsum.photos/id/1062/400/600" alt="Anime Portrait">
-                    <div class="resolution-tag">2K HD</div>
-                </div>
-                <div class="card-info">
-                    <h3>Minimalist Anime Boy</h3>
-                    <a href="#" class="btn free-btn">Download Free</a>
-                </div>
-            </div>
+            <img src="https://picsum.photos/500/700?2">
 
-            <div class="wallpaper-card" data-device="pc" data-theme="cars" data-price="premium">
-                <div class="image-container">
-                    <span class="badge premium">Premium</span>
-                    <img src="https://picsum.photos/id/111/600/400" alt="Supercar">
-                    <div class="resolution-tag">4K Cinema</div>
-                </div>
-                <div class="card-info">
-                    <h3>Hypercar City Cruise</h3>
-                    <a href="#" target="_blank" class="btn buy-btn">Get Now — $1.99</a>
-                </div>
-            </div>
+            <h3>Cyberpunk Night</h3>
 
-            <div class="wallpaper-card" data-device="phone" data-theme="abstract" data-price="free">
-                <div class="image-container">
-                    <span class="badge free">Free</span>
-                    <img src="https://picsum.photos/id/1043/400/600" alt="Abstract Dynamic">
-                    <div class="resolution-tag">4K Mobile</div>
-                </div>
-                <div class="card-info">
-                    <h3>Abstract Fluid Geometry</h3>
-                    <a href="#" class="btn free-btn">Download Free</a>
-                </div>
-            </div>
         </div>
-    </main>
 
-    <script src="script.js"></script>
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?3">
+
+            <h3>Neon Tokyo</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NEW -->
+
+<section class="section">
+
+    <h2>🆕 New Wallpapers</h2>
+
+    <div class="wallpaper-grid">
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?4">
+
+            <h3>Anime Girl Sunset</h3>
+
+        </div>
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?5">
+
+            <h3>Blue Dragon</h3>
+
+        </div>
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?6">
+
+            <h3>Futuristic City</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MOST FAVOURITE -->
+
+<section class="section">
+
+    <h2>⭐ Most Favourite</h2>
+
+    <div class="wallpaper-grid">
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?7">
+
+            <h3>Gojo Purple Void</h3>
+
+        </div>
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?8">
+
+            <h3>Supercar Lights</h3>
+
+        </div>
+
+        <div class="wallpaper-card">
+
+            <img src="https://picsum.photos/500/700?9">
+
+            <h3>Fantasy Kingdom</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PREMIUM PREVIEW -->
+
+<section class="section">
+
+    <h2>👑 Premium Wallpapers</h2>
+
+    <div class="premium-grid">
+
+        <div class="premium-card">
+
+            <div class="premium-watermark">
+                PREVIEW ONLY
+            </div>
+
+            <img src="https://picsum.photos/600/800?10">
+
+            <h3>Makima Premium Pack</h3>
+
+            <button>
+                Unlock
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PREMIUM PLANS -->
+
+<section class="pricing">
+
+    <h2>Premium Plans</h2>
+
+    <div class="pricing-grid">
+
+        <div class="plan-card">
+
+            <h3>Premium</h3>
+
+            <p>₹49</p>
+
+            <span>5 Days Access</span>
+
+            <span>7 Premium Downloads</span>
+
+        </div>
+
+        <div class="plan-card">
+
+            <h3>Pro</h3>
+
+            <p>₹99</p>
+
+            <span>15 Premium Downloads</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- AD FREE -->
+
+<section class="pricing">
+
+    <h2>Ad Free Plans</h2>
+
+    <div class="pricing-grid">
+
+        <div class="plan-card">
+
+            <h3>Ad Free</h3>
+
+            <p>₹29</p>
+
+            <span>3 Days</span>
+
+        </div>
+
+        <div class="plan-card">
+
+            <h3>Ad Free Pro</h3>
+
+            <p>₹59</p>
+
+            <span>10 Days</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>WallpaperVerse</h3>
+
+    <p>
+        Premium Wallpapers for Phone, PC, Laptop & Tablet
+    </p>
+
+    <p>
+        Pinterest: @Shonosensei
+    </p>
+
+</footer>
+
 </body>
 </html>
